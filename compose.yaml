@@ -1,0 +1,25 @@
+services:
+  sms-postgres:
+    image: 'postgres:15'
+    environment:
+      - 'POSTGRES_DB=sms-db'
+      - 'POSTGRES_PASSWORD=admin'
+      - 'POSTGRES_USER=sms-admin'
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./SMS-DB-DATA/data:/var/lib/postgresql/data
+    container_name: sms-db
+    restart: always
+  sms-pgadmin:
+    image: 'dpage/pgadmin4'
+    environment:
+      - 'PGADMIN_DEFAULT_EMAIL=sms@example.com'
+      - 'PGADMIN_DEFAULT_PASSWORD=admin'
+    ports:
+      - "5050:80"
+    volumes:
+      - ./SMS-PGADMIN:/var/lib/pgadmin
+    container_name: sms-pgadmin
+    depends_on:
+      - sms-postgres

@@ -17,7 +17,7 @@ public class TestStudentManagementSystemApplication {
     }
 
     public static void main(String[] args) {
-        SpringApplication.from(StudentManagementSystemApplication::main).with(TestStudentManagementSystemApplication.class).run(args);
+        SpringApplication.from(MainApplication::main).with(TestStudentManagementSystemApplication.class).run(args);
     }
 
 }
