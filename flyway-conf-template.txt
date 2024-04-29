@@ -1,0 +1,6 @@
+flyway.user=<database user>
+flyway.password=<database password>
+flyway.schemas=<database name>
+flyway.url=<database url>
+
+### The data in this file should match the data inside application.yml.
