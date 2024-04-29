@@ -31,3 +31,6 @@ replay_pid*
 
 SMS-DB-DATA
 SMS-PGADMIN
+
+flyway.conf
+.jpb
